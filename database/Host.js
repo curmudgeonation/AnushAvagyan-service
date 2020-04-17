@@ -12,16 +12,18 @@ const hostSchema = new mongoose.Schema({
   coHost: [Number],
   duringStay: String,
   description: String,
+  location: String,
+  provided: {
+    email: {type: Boolean, default: false},
+    phone: {type: Boolean, default: false},
+    id: {type: Boolean, default: false}
+  },
   joined_at: Date,
   languages: String,
   responseTime: String,
   responseRate: {type: Number, max: 100, default: 100},
   avatarUrl: String
-},
-  {
-    timestamps: true
-  }
-);
+});
 
 const Host = mongoose.model('Host', hostSchema);
 

@@ -14,6 +14,11 @@ const sampleData = [
     languages: 'English, Italiano',
     responseTime: 'within an hour',
     responseRate: 100,
+    location: 'New York',
+  provided: {
+    email: true,
+    phone: true
+  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   },
   {
@@ -30,6 +35,12 @@ const sampleData = [
     languages: 'English, Korean, German',
     responseTime: 'within an hour',
     responseRate: 98,
+    location: 'Sunnyvale, CA',
+  provided: {
+    email: true,
+    phone: true,
+    id: true
+  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   },
   {
@@ -44,12 +55,18 @@ const sampleData = [
     languages: 'English',
     responseTime: 'within an hour',
     responseRate: 92,
+    location: 'San Jose, CA',
+  provided: {
+    email: false,
+    phone: true,
+    id: false
+  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   },
   {
     id: 4,
-    name: 'Some name',
-    description: 'Something about myself --- I am a host',
+    name: 'Kathy & Craig',
+    description: 'We met and became friends 25 years ago, then about 9 years ago (single again after marriages and families with other people) decided that WE should be a couple. Weve been happily married for 5 years now, and our Airbnb rental is on the property of the Sunnyvale house we bought together and lovingly renovated. Craig is from Baton Rouge, Louisiana (still says y\'all despite 25 years away from the South). He\'s a tech writer at Cisco. He loves music, reading, vintage Mustangs, and recently has taken up video gaming. I\'m from Pittsburgh, PA and am a Program Manager at Symantec Corp. I love cooking, gardening, decorating and redecorating, painting and reading.We love our house and neighborhood and want everyone who stays with us to to feel comfortable and welcome.',
     duringStay: 'You will enjoy staying in this property',
     reviews: 16,
     verified: true,
@@ -59,7 +76,13 @@ const sampleData = [
     joined_at: '2011-01-14T05:05:26.037Z',
     languages: 'English, Spanish',
     responseTime: 'within an hour',
-    responseRate: 90,
+    responseRate: 100,
+    location: 'Honolulu, HI',
+  provided: {
+    email: true,
+    phone: false,
+    id: true
+  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   }
 
