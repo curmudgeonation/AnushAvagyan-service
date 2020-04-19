@@ -1,5 +1,22 @@
 const db  = require('./index.js');
 const Host = require('./Host.js');
+var moment = require('moment');
+
+const LoremIpsum = require("lorem-ipsum").LoremIpsum;
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4
+  }
+});
+
+
+
 
 const sampleData = [
   {
@@ -30,7 +47,7 @@ const sampleData = [
     verified: true,
     superhost: true,
     superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
-    coHost: [3, 4]
+    coHost: [3, 4],
     joined_at: '2015-01-14T05:05:26.037Z',
     languages: 'English, Korean, German',
     responseTime: 'within an hour',
@@ -50,7 +67,7 @@ const sampleData = [
     reviews: 127,
     verified: true,
     superhost: false,
-    coHost: [2]
+    coHost: [2],
     joined_at: '2019-11-18T05:05:26.037Z',
     languages: 'English',
     responseTime: 'within an hour',
@@ -72,7 +89,7 @@ const sampleData = [
     verified: true,
     superhost: true,
     superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
-    coHost: [2]
+    coHost: [2],
     joined_at: '2011-01-14T05:05:26.037Z',
     languages: 'English, Spanish',
     responseTime: 'within an hour',
@@ -88,8 +105,38 @@ const sampleData = [
 
 
 ];
+var randomLocation = ['San Jose, CA', 'New Deli, India', 'Moscow, Russia', 'Paris, France', 'Yerevan, Armenia', 'San Francisco, CA', 'Berlin, Germany', 'Rome, Italy', 'Napa, CA'];
+var randomLanguage = ['English', 'Chinese', 'Spanish', 'Hindi', 'Arabic', 'PORTUGUESE', 'Russian'];
+var randomResponse = ['within an hour', 'within a day', 'within a minute', 'within a week' ,'within 2 hours'];
+var randomBoolean = [true, false];
 
 const insertSampleData = function() {
+
+  for (var i = 5; i < 120; i++) {
+    var temp =  {
+      id: i,
+      name: lorem.generateWords(2),
+      description: lorem.generateSentences(5),
+      duringStay: lorem.generateSentences(3),
+      reviews: Math.round(Math.random() * 1000),
+      verified: true,
+      superhost: randomBoolean[Math.round(Math.random())],
+      superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
+      joined_at: moment(new Date(+(new Date()) - Math.floor(Math.random()*1000000000000)))
+      .format(),
+      languages: randomLanguage[Math.round(Math.random() * 6)],
+      responseTime: randomResponse[Math.round(Math.random() * 4)],
+      responseRate: Math.round(Math.random() * 100),
+      location: randomLocation[Math.round(Math.random() * 8)],
+    provided: {
+      email: true,
+      phone: false,
+      id: true
+    },
+      avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+    }
+    sampleData.push(temp);
+  }
   Host.create(sampleData)
     .then(() => db.disconnect());
 };
