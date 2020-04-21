@@ -1,17 +1,39 @@
 {
-  "name": "",
-  "version": "",
+  "name": "host-service",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
-  "license": "",
+  "author": "index.js",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "build": "webpack",
+    "start": "nodemon server/index.js",
+    "dev:react": "webpack -d --watch",
+    "db:setup": "node database/seed.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.0",
+    "lorem-ipsum": "^2.0.3",
+    "moment": "^2.24.0",
+    "moment-locales-webpack-plugin": "^1.2.0",
+    "mongoose": "^5.9.9",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/preset-react": "^7.9.4",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
