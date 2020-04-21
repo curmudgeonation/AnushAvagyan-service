@@ -108,7 +108,6 @@ const sampleData = [
 var randomLocation = ['San Jose, CA', 'New Deli, India', 'Moscow, Russia', 'Paris, France', 'Yerevan, Armenia', 'San Francisco, CA', 'Berlin, Germany', 'Rome, Italy', 'Napa, CA'];
 var randomLanguage = ['English', 'Chinese', 'Spanish', 'Hindi', 'Arabic', 'PORTUGUESE', 'Russian'];
 var randomResponse = ['within an hour', 'within a day', 'within a minute', 'within a week' ,'within 2 hours'];
-var randomBoolean = [true, false];
 
 const insertSampleData = function() {
 
@@ -120,7 +119,7 @@ const insertSampleData = function() {
       duringStay: lorem.generateSentences(3),
       reviews: Math.round(Math.random() * 1000),
       verified: true,
-      superhost: randomBoolean[Math.round(Math.random())],
+      superhost: Math.random() >= 0.8,
       superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
       joined_at: moment(new Date(+(new Date()) - Math.floor(Math.random()*1000000000000)))
       .format(),
@@ -138,7 +137,7 @@ const insertSampleData = function() {
     sampleData.push(temp);
   }
   Host.create(sampleData)
-    .then(() => db.disconnect());
+    .then(() => db.close());
 };
 
 insertSampleData();
