@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const Hosts = require('../database/Host.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
