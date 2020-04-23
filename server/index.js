@@ -16,12 +16,11 @@ app.get('/hosts/:id', function(req, res, next = () => {}) {
 
   Hosts.find({id: req.params.id}).exec((err, data) => {
     if (err) {
-      console.log('Failed to query data ', err);
-    } else {
-
-      res.end(JSON.stringify(data));
-      next();
+      return console.error(err);
     }
+    res.status(200).json(data);
+    next();
+    
   })
 
 });
