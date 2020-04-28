@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 //import Profile from './components/Profile.jsx';
 import Host from './Host.jsx';
+import {GlobalStyle} from './styledComponents.jsx'
 
 
 class App extends React.Component {
@@ -24,6 +25,9 @@ class App extends React.Component {
       url: 'http://127.0.0.1:3001/7',
       type: 'GET',
       success: (data) => {
+        if (data.description.length > 180) {
+          data.descShort = data.description.substr(0, 180);
+        }
         this.setState({
           host: data
         });
@@ -57,7 +61,7 @@ class App extends React.Component {
     // console.log('rhdjfgj', this.state);
     return (
       <div>
-        <h1>Test</h1>
+        <GlobalStyle />
         <div className="main">
           {this.renderView()}
         </div>
