@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 var moment = require('moment');
+import ReadMore from './ReadMoreButton.jsx';
 
-// const [state, setState] = useState({
-//   desc: 'full'
-// });
+
 
 import {
   Avatar, Image, Icon, Title, Date, Name, Headline
@@ -28,10 +27,14 @@ const Host = (props) => (
     </Title>
 
     <div className="info">
-    <div className="description">{props.host.description}</div>
+      <ReadMore less={props.host.descShort} more={props.host.description}/>
+
+      {props.host.duringStay &&
+      <div>
     <Headline>During your stay</Headline>
 
-    <div className="duringStay">{props.host.duringStay}</div>
+    <ReadMore less={props.host.duringStayLess} more={props.host.duringStay}/>
+    </div>}
 
     </div>
 

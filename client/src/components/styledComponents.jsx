@@ -48,7 +48,12 @@ padding-top: 6px;
 `
 export const Name = styled.h2`
 margin: 0px ;
-  padding: 0px;
+padding: 0px;
 `
-
+export const ReadMore = styled.a`
+text-decoration: underline;
+font-weight: bold;
+padding-bottom: 10px;
+cursor: pointer;
+`
 

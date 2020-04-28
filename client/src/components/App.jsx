@@ -17,6 +17,7 @@ class App extends React.Component {
     }
 
     this.changeToHostView = this.changeToHostView.bind(this);
+    this.showMore = this.showMore.bind(this);
   }
   componentDidMount(){
     // console.log('I am in component did monut!!')
@@ -28,10 +29,14 @@ class App extends React.Component {
         if (data.description.length > 180) {
           data.descShort = data.description.substr(0, 180);
         }
+        if (data.duringStay.length > 180) {
+          data.duringStayLess = data.duringStay.substr(0, 180);
+        }
+
         this.setState({
           host: data
         });
-
+        console.log(this.state.host);
       },
       error: function(err) {
         console.log("Failed to get the data from the server ", err);
@@ -44,6 +49,13 @@ class App extends React.Component {
     //   redirect: "/host-details-page",
     //   host: host
     // });
+  }
+
+  showMore(desc) {
+    this.setState({
+      redirect: "/host-details-page",
+      host: host
+    });
   }
 
   renderView() {
