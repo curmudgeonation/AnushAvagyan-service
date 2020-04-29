@@ -5,7 +5,7 @@ import ReadMore from './ReadMoreButton.jsx';
 
 
 import {
-  Avatar, Image, Icon, Title, Date, Name, Headline
+  Avatar, Image, Icon, Title, Date, Name, Bold, Info, Top, ContactHost
 } from './styledComponents.jsx'
 
 
@@ -13,7 +13,7 @@ import {
 
 const Host = (props) => (
   <div>
-     <div>
+     <Top>
     <Avatar>
       <Image src={props.host.avatarUrl} />
       {props.host.superhost &&
@@ -25,29 +25,34 @@ const Host = (props) => (
     <Date>Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
 
     </Title>
+    </Top>
 
-    <div className="info">
+    <Info>
       <ReadMore less={props.host.descShort} more={props.host.description}/>
 
       {props.host.duringStay &&
       <div>
-    <Headline>During your stay</Headline>
+    <Bold>During your stay</Bold>
 
     <ReadMore less={props.host.duringStayLess} more={props.host.duringStay}/>
     </div>}
 
-    </div>
+
 
     {props.host.superhost &&
         <div>
-          <Headline>{props.host.name} is a Superhost</Headline>
+          <Bold>{props.host.name} is a Superhost</Bold>
         <div className="superhost-desc">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</div>
 
         </div>
       }
-
-
-  </div>
+  </Info>
+  <Info>
+    <div>Language: {props.host.languages}</div>
+    <div>Response rate: {props.host.responseRate}%</div>
+    <div>Response time: {props.host.responseTime}</div>
+    <ContactHost>Contact Host</ContactHost>
+  </Info>
 
   </div>
 )
