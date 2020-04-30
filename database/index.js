@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/host';
+const mongoUri = process.env.MONGODB_URI;
 
-mongoose.connect(mongoUri);
+mongoose.connect(mongoUri, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
