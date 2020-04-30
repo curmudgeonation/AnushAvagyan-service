@@ -26,7 +26,7 @@ const Host = (props) => (
 
     </Title>
     </Top>
-
+    
     <Info>
       <ReadMore less={props.host.descShort} more={props.host.description}/>
 
@@ -51,7 +51,7 @@ const Host = (props) => (
     <div>Language: {props.host.languages}</div>
     <div>Response rate: {props.host.responseRate}%</div>
     <div>Response time: {props.host.responseTime}</div>
-    <ContactHost>Contact Host</ContactHost>
+    <ContactHost>Contact host</ContactHost>
   </Info>
 
   </div>

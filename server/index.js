@@ -42,10 +42,18 @@ app.get('/hosts/:id', function(req, res, next = () => {}) {
 app.get('/:id', function(req, res, next = () => {}) {
   // call listing service API to get host id associated with the listing id in the url
   // query the db or call my own api to get host data with host id
-  console.log("Server days HI")
+  console.log("Server days HI");
 
+  Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
+    if (err) {
+      return console.error(err);
+    }
+    res.status(200).json(data);
+    next();
 
-  res.status(200).json(sampleData);
+  })
+
+  //res.status(200).json(sampleData);
 
 
 });

@@ -47,7 +47,6 @@ background-color: white;
 &:hover {
   background: rgb(240,240,240);
 }
-
 border-color: rgb(34, 34, 34);
 
 `

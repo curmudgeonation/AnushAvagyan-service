@@ -26,17 +26,17 @@ class App extends React.Component {
       url: 'http://127.0.0.1:3001/7',
       type: 'GET',
       success: (data) => {
-        if (data.description.length > 180) {
-          data.descShort = data.description.substr(0, 180);
+        if (data[0].description && data[0].description.length > 180) {
+          data[0].descShort = data[0].description.substr(0, 180);
         }
-        if (data.duringStay.length > 180) {
-          data.duringStayLess = data.duringStay.substr(0, 180);
+        if (data[0].duringStay && data[0].duringStay.length > 180) {
+          data[0].duringStayLess = data[0].duringStay.substr(0, 180);
         }
 
         this.setState({
-          host: data
+          host: data[0]
         });
-        console.log(this.state.host);
+        console.log('this is the stets after req', this.state.host);
       },
       error: function(err) {
         console.log("Failed to get the data from the server ", err);
