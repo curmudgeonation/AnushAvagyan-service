@@ -21,13 +21,26 @@ div {
     width: 100%;
   }
 }
+.checked {
+  color: rgb(255, 102, 102);
+}
 `
 export const Info = styled.div`
 float: left;
 width: 45%;
 padding-right: 100px;
+`
+export const Cols = styled.table`
+padding-bottom: 15px;
 
 `
+export const Stats = styled.td`
+text-align: left;
+padding-right: 30px;
+
+`
+
+
 export const Top = styled.div`
 padding-bottom: 10px;
 `

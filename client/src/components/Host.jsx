@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-var moment = require('moment');
-import ReadMore from './ReadMoreButton.jsx';
+import Description from './Description.jsx';
+import Profile from './Profile.jsx';
+import Reviews from './Reviews.jsx';
 
 
 
 import {
-  Avatar, Image, Icon, Title, Date, Name, Bold, Info, Top, ContactHost
+  Bold, Info, ContactHost
 } from './styledComponents.jsx'
 
 
@@ -13,28 +14,18 @@ import {
 
 const Host = (props) => (
   <div>
-     <Top>
-    <Avatar>
-      <Image src={props.host.avatarUrl} />
-      {props.host.superhost &&
-      <Icon src='../././icon.png' />
-      }
-    </Avatar>
-    <Title>
-    <Name>Hosted by {props.host.name}</Name>
-    <Date>Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
+     <Profile url={props.host.avatarUrl} name={props.host.name} date={props.host.joined_at} superhost={props.host.superhost}/>
 
-    </Title>
-    </Top>
 
     <Info>
-      <ReadMore less={props.host.descShort} more={props.host.description}/>
+      <Reviews superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
+      <Description less={props.host.descShort} more={props.host.description}/>
 
       {props.host.duringStay &&
       <div>
     <Bold>During your stay</Bold>
 
-    <ReadMore less={props.host.duringStayLess} more={props.host.duringStay}/>
+    <Description less={props.host.duringStayLess} more={props.host.duringStay}/>
     </div>}
 
 
