@@ -6,7 +6,7 @@ import Reviews from './Reviews.jsx';
 
 
 import {
-  Bold, Info, ContactHost
+  Bold, Info, ContactHost, Note, NoteIcon
 } from './styledComponents.jsx'
 
 
@@ -43,7 +43,9 @@ const Host = (props) => (
     <div>Response rate: {props.host.responseRate}%</div>
     <div>Response time: {props.host.responseTime}</div>
     <ContactHost>Contact host</ContactHost>
+    <Note><NoteIcon src='../././privacyNote.png' /> <p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p> </Note>
   </Info>
+
 
   </div>
 )
