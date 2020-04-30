@@ -20,21 +20,22 @@ class App extends React.Component {
     this.showMore = this.showMore.bind(this);
   }
   componentDidMount(){
-    // console.log('I am in component did monut!!')
+    console.log(this.props.id)
 
     $.ajax({
-      url: 'http://127.0.0.1:3001/7',
+      url: 'http://127.0.0.1:3001/hosts/listings/'+ this.props.id,
       type: 'GET',
       success: (data) => {
-        if (data[0].description && data[0].description.length > 180) {
-          data[0].descShort = data[0].description.substr(0, 180);
+
+        if (data.description && data.description.length > 180) {
+          data.descShort = data.description.substr(0, 180);
         }
-        if (data[0].duringStay && data[0].duringStay.length > 180) {
-          data[0].duringStayLess = data[0].duringStay.substr(0, 180);
+        if (data.duringStay && data.duringStay.length > 180) {
+          data.duringStayLess = data.duringStay.substr(0, 180);
         }
 
         this.setState({
-          host: data[0]
+          host: data
         });
         console.log('this is the stets after req', this.state.host);
       },

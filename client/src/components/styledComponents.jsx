@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Montserrat';
   font-size: 1.1em;
-  margin-right: 290px;
-  margin-left: 200px;
+
+  margin-left: 250px;
 }
 div {
   padding-top: 5px;
@@ -24,7 +24,7 @@ div {
 `
 export const Info = styled.div`
 float: left;
-width: 50%;
+width: 45%;
 padding-right: 100px;
 
 `

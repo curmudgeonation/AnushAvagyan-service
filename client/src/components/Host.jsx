@@ -17,7 +17,7 @@ const Host = (props) => (
     <Avatar>
       <Image src={props.host.avatarUrl} />
       {props.host.superhost &&
-      <Icon src='../././icon.png'/>
+      <Icon src='../././icon.png' />
       }
     </Avatar>
     <Title>
@@ -26,7 +26,7 @@ const Host = (props) => (
 
     </Title>
     </Top>
-    
+
     <Info>
       <ReadMore less={props.host.descShort} more={props.host.description}/>
 
