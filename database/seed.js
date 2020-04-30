@@ -36,7 +36,7 @@ const sampleData = [
     email: true,
     phone: true
   },
-    avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+    avatarUrl: 'https://source.unsplash.com/200x130/?portrait'
   },
   {
     id: 2,
@@ -142,4 +142,7 @@ const insertSampleData = function() {
 };
 
 insertSampleData();
+
+module.exports = sampleData;
+
 
