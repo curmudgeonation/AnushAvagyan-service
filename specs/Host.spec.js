@@ -13,7 +13,7 @@ describe('Host component', function() {
   it('should render all elements correctly without throwing an error', function() {
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find('Profile').length).toBe(1);
-    expect(wrapper.find('Reviews').length).toBe(1);
+    expect(wrapper.find('Stats').length).toBe(1);
     expect(wrapper.find('Description').length).toBeTruthy();
     expect(wrapper.find('.lang').length).toBe(1);
     expect(wrapper.find('.lang').text()).toEqual('Language: ' + sampleData.languages);

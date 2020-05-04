@@ -17,7 +17,7 @@ class App extends React.Component {
     }
 
     this.changeToHostView = this.changeToHostView.bind(this);
-    this.showMore = this.showMore.bind(this);
+   
   }
   componentDidMount(){
 
@@ -51,25 +51,19 @@ class App extends React.Component {
     // });
   }
 
-  showMore(desc) {
-    this.setState({
-      redirect: "/host-details-page",
-      host: host
-    });
-  }
-
   renderView() {
     const {host} = this.state;
 
     if (host) {
       return <Host host={this.state.host} onClick={(host) => this.changeToHostView(host)} />
     }
-  }
-
-  render() {
     // if (this.state.redirect) {
     //   return <Redirect to={this.state.redirect} />
     // }
+  }
+
+  render() {
+
     // console.log('rhdjfgj', this.state);
     return (
       <div>

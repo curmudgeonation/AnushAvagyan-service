@@ -5,10 +5,7 @@ var moment = require('moment');
 
 import App from '../client/src/components/App';
 import Host from '../client/src/components/Host';
-import Description from '../client/src/components/Description';
-import Profile from '../client/src/components/Profile';
-import Reviews from '../client/src/components/Reviews';
-import styledComponents from '../client/src/components/styledComponents';
+
 
 const sampleData = require('../database/sampleData.js');
 

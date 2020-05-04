@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Description from './Description.jsx';
 import Profile from './Profile.jsx';
-import Reviews from './Reviews.jsx';
+import Stats from './Stats.jsx';
 
 
 
@@ -18,7 +18,7 @@ const Host = (props) => (
 
 
     <Info>
-      <Reviews superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
+      <Stats superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
 
       <Description className='desc' less={props.host.descShort} more={props.host.description}/>
 

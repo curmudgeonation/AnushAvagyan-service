@@ -19,7 +19,7 @@ class Description extends React.Component {
 
   showMoreOrLess() {
     if (this.props.less && !this.state.full) {
-      return <div className="description">{this.props.less}... <ReadMore onClick={() => this.changeView()}>read more</ReadMore></div>
+      return <div className="description">{this.props.less}... <ReadMore className='read-more' onClick={() => this.changeView()}>read more</ReadMore></div>
     } else {
       return <div className="description">{this.props.more}</div>
     }

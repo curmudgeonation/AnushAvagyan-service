@@ -38,7 +38,7 @@ export const Cols = styled.table`
 padding-bottom: 15px;
 
 `
-export const Stats = styled.td`
+export const StatsData = styled.td`
 text-align: left;
 padding-right: 30px;
 
