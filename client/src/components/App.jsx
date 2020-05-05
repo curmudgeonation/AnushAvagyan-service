@@ -17,13 +17,12 @@ class App extends React.Component {
     }
 
     this.changeToHostView = this.changeToHostView.bind(this);
-    this.showMore = this.showMore.bind(this);
+   
   }
   componentDidMount(){
-    console.log(this.props.id)
 
     $.ajax({
-      url: 'http://127.0.0.1:3001/hosts/listings/'+ this.props.id,
+      url: 'http://127.0.0.1:3001/listings/' + this.props.id+ '/hosts',
       type: 'GET',
       success: (data) => {
 
@@ -37,7 +36,7 @@ class App extends React.Component {
         this.setState({
           host: data
         });
-        console.log('this is the stets after req', this.state.host);
+
       },
       error: function(err) {
         console.log("Failed to get the data from the server ", err);
@@ -52,25 +51,19 @@ class App extends React.Component {
     // });
   }
 
-  showMore(desc) {
-    this.setState({
-      redirect: "/host-details-page",
-      host: host
-    });
-  }
-
   renderView() {
     const {host} = this.state;
 
     if (host) {
       return <Host host={this.state.host} onClick={(host) => this.changeToHostView(host)} />
     }
-  }
-
-  render() {
     // if (this.state.redirect) {
     //   return <Redirect to={this.state.redirect} />
     // }
+  }
+
+  render() {
+
     // console.log('rhdjfgj', this.state);
     return (
       <div>

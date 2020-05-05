@@ -21,13 +21,30 @@ div {
     width: 100%;
   }
 }
+.checked {
+  color: rgb(255, 102, 102);
+}
+
 `
 export const Info = styled.div`
 float: left;
-width: 45%;
+width: 42%;
 padding-right: 100px;
+`
+export const NoteIcon = styled.img`
+float: left;
+`
+export const Cols = styled.table`
+padding-bottom: 15px;
 
 `
+export const StatsData = styled.td`
+text-align: left;
+padding-right: 30px;
+
+`
+
+
 export const Top = styled.div`
 padding-bottom: 10px;
 `
@@ -106,5 +123,15 @@ font-weight: 550;
 padding-bottom: 0px;
 padding-top: 0px;
 cursor: pointer;
+`
+export const Note = styled.div`
+color: rgb(34, 34, 34);
+font-weight: 400;
+font-size: 13px;
+padding-top: 30px;
+align-items: center;
+width: 50%;
+
+
 `
 

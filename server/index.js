@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
-
 const Hosts = require('../database/Host.js');
-
 const sampleData = require('../database/sampleData.js');
 
 const app = express();
@@ -26,9 +24,10 @@ app.use((req, res, next) => {
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
-  //res.end();
+
 });
 
+//returns host data based on the id
 app.get('/hosts/:id', function(req, res, next = () => {}) {
 
   Hosts.find({id: req.params.id}).exec((err, data) => {
@@ -37,33 +36,34 @@ app.get('/hosts/:id', function(req, res, next = () => {}) {
     }
     res.status(200).json(data);
     next();
-
   })
-
 });
-app.get('/hosts/listings/:id', function(req, res, next = () => {}) {
+
+//returns all host data
+app.get('/hosts', function(req, res, next = () => {}) {
+
+  Hosts.find({}).exec((err, data) => {
+    if (err) {
+      return console.error(err);
+    }
+    res.status(200).json(data);
+    next();
+  })
+});
+
+app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   // call listing service API to get host id associated with the listing id in the url
   // query the db or call my own api to get host data with host id
   console.log("ID is ", req.params.id);
-
   Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
     if (err) {
       return console.error(err);
     }
     res.status(200).json(data[0]);
     next();
-
   })
-
-
-
   //res.status(200).json(sampleData);
-
-
 });
-
-
-
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

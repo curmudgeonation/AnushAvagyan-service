@@ -6,6 +6,7 @@ var moment = require('moment');
 import App from '../client/src/components/App';
 import Host from '../client/src/components/Host';
 
+
 const sampleData = require('../database/sampleData.js');
 
 describe('App component', function() {
@@ -20,36 +21,36 @@ describe('App component', function() {
 
 });
 
-describe('Host component', function() {
-  const wrapper = shallow(<Host host={sampleData} />);
+// describe('Host component', function() {
+//   const wrapper = shallow(<Host host={sampleData} />);
 
-  it('should render without throwing an error', function() {
-    expect(wrapper.exists()).toBe(true);
-    expect(wrapper.find('.avatar').length).toBe(1);
-    expect(wrapper.find('.title').length).toBe(1);
-  });
-  it('should render Superhost icon if the host is a Superhost', function() {
-    expect(wrapper.find('.image').length).toBe(1);
-    expect(wrapper.find('.icon').length).toBe(1);
+//   it('should render without throwing an error', function() {
+//     expect(wrapper.exists()).toBe(true);
+//     expect(wrapper.find('.avatar').length).toBe(1);
+//     expect(wrapper.find('.title').length).toBe(1);
+//   });
+//   it('should render Superhost icon if the host is a Superhost', function() {
+//     expect(wrapper.find('.image').length).toBe(1);
+//     expect(wrapper.find('.icon').length).toBe(1);
 
-  });
-  it('should not render Superhost icon if the host is not a Superhost', function() {
-    sampleData.superhost = false;
-    const wrapper = shallow(<Host host={sampleData} />);
-    expect(wrapper.find('.image').length).toBe(1);
-    expect(wrapper.find('.icon').length).toBe(0);
-    sampleData.superhost = true;
+//   });
+//   it('should not render Superhost icon if the host is not a Superhost', function() {
+//     sampleData.superhost = false;
+//     const wrapper = shallow(<Host host={sampleData} />);
+//     expect(wrapper.find('.image').length).toBe(1);
+//     expect(wrapper.find('.icon').length).toBe(0);
+//     sampleData.superhost = true;
 
-  });
-  it('should render the name of the host', function() {
+//   });
+//   it('should render the name of the host', function() {
 
-    expect(wrapper.find('.name').text()).toEqual('Hosted by ' + sampleData.name);
-  });
+//     expect(wrapper.find('.name').text()).toEqual('Hosted by ' + sampleData.name);
+//   });
 
-  it('should render the joined at date in the correct format', function() {
+//   it('should render the joined at date in the correct format', function() {
 
-    expect(wrapper.find('.joined').text()).toEqual('Joined in ' + moment(sampleData.joined_at).format("MMMM YYYY"));
-  });
+//     expect(wrapper.find('.joined').text()).toEqual('Joined in ' + moment(sampleData.joined_at).format("MMMM YYYY"));
+//   });
 
 
-});
+//});
