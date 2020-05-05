@@ -14,14 +14,14 @@ const Profile = (props) => (
   <div>
      <Top>
     <Avatar>
-      <Image src={props.url} />
+      <Image className='photo' src={props.url} />
       {props.superhost &&
-      <Icon src='../././icon.png' />
+      <Icon className='icon' src='../././icon.png' />
       }
     </Avatar>
     <Title>
-    <Name>Hosted by {props.name}</Name>
-    <Date>Joined in {moment(props.date).format("MMMM YYYY")}</Date>
+    <Name className='host-name' >Hosted by {props.name}</Name>
+    <Date className='date-joined' >Joined in {moment(props.date).format("MMMM YYYY")}</Date>
 
     </Title>
     </Top>
