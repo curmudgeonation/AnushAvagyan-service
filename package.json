@@ -2,7 +2,7 @@
   "name": "host-service",
   "version": "1.0.0",
   "description": "",
-  "author": "index.js",
+  "author": "Anush Avagyan",
   "license": "ISC",
   "engines": {
     "node": ">=6.13.0"

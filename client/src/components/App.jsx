@@ -17,7 +17,7 @@ class App extends React.Component {
     }
 
     this.changeToHostView = this.changeToHostView.bind(this);
-   
+
   }
   componentDidMount(){
 

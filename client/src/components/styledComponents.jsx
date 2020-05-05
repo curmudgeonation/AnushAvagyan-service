@@ -9,13 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Montserrat';
   font-size: 1.1em;
+}
 
-  margin-left: 250px;
-}
-div {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
 @media screen and (max-width: 600px) {
   .info {
     width: 100%;
@@ -27,6 +22,8 @@ div {
 
 `
 export const Info = styled.div`
+padding-top: 5px;
+padding-bottom: 5px;
 float: left;
 width: 42%;
 padding-right: 100px;
@@ -46,6 +43,7 @@ padding-right: 30px;
 
 
 export const Top = styled.div`
+padding-top: 5px;
 padding-bottom: 10px;
 `
 
@@ -105,6 +103,8 @@ left: 65px;
 `
 export const Title = styled.div`
 margin-top: 30px;
+padding-top: 5px;
+padding-bottom: 5px;
 `
 export const Date = styled.div`
 color: rgb(113, 113, 113);
@@ -129,6 +129,7 @@ color: rgb(34, 34, 34);
 font-weight: 400;
 font-size: 13px;
 padding-top: 30px;
+padding-bottom: 5px;
 align-items: center;
 width: 50%;
 
