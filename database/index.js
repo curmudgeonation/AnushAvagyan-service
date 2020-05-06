@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUri = process.env.MONGODB_URI;
+const mongoUri = 'mongodb://localhost:27017/host';
 
 mongoose.connect(mongoUri, {
   useCreateIndex: true,

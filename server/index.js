@@ -6,7 +6,7 @@ const Hosts = require('../database/Host.js');
 const sampleData = require('../database/sampleData.js');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
