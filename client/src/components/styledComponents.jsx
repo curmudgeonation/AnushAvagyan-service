@@ -16,6 +16,9 @@ body {
     width: 100%;
   }
 }
+.flex-container {
+  display: flex;
+}
 .checked {
   color: rgb(255, 102, 102);
 }
@@ -24,7 +27,6 @@ body {
 export const Info = styled.div`
 padding-top: 5px;
 padding-bottom: 5px;
-float: left;
 width: 42%;
 padding-right: 100px;
 `
@@ -45,6 +47,7 @@ padding-right: 30px;
 export const Top = styled.div`
 padding-top: 5px;
 padding-bottom: 10px;
+display: flex;
 `
 
 export const ContactHost = styled.button`
@@ -84,7 +87,6 @@ padding-bottom: 3px;
 `
 export const Avatar = styled.div`
 position:relative;
-float:left;
 margin-right: 20px;
 padding-top: 10px;
 padding-bottom: 10px;

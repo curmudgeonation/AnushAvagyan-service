@@ -16,7 +16,7 @@ const Profile = (props) => (
     <Avatar>
       <Image className='photo' src={props.url} />
       {props.superhost &&
-      <Icon className='icon' src='../././icon.png' />
+      <Icon className='icon' src='http://localhost:3001/assets/icon.png' />
       }
     </Avatar>
     <Title>

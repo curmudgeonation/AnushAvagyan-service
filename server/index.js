@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
+
 const Hosts = require('../database/Host.js');
 const sampleData = require('../database/sampleData.js');
 
@@ -20,11 +21,6 @@ app.use((req, res, next) => {
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   next();
-});
-
-app.get('/:id', (req, res) => {
-  res.sendFile(path.join(__dirname + '/index.html'));
-
 });
 
 //returns host data based on the id
@@ -50,6 +46,10 @@ app.get('/hosts', function(req, res, next = () => {}) {
     next();
   })
 });
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
+
+});
 
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   // call listing service API to get host id associated with the listing id in the url
@@ -64,6 +64,11 @@ app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   })
   //res.status(200).json(sampleData);
 });
+
+app.get('/assets/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/assets/' + req.params.id));
+});
+
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
