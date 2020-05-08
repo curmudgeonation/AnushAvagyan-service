@@ -33,12 +33,12 @@ padding-right: 100px;
 export const NoteIcon = styled.img`
 float: left;
 `
-export const Cols = styled.table`
+export const Cols = styled.div`
 padding-bottom: 15px;
+display: flex;
 
 `
-export const StatsData = styled.td`
-text-align: left;
+export const StatsData = styled.div`
 padding-right: 30px;
 
 `

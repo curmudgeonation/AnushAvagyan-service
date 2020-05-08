@@ -12,16 +12,11 @@ import {
 
 const Stats = (props) => (
   <Cols>
-    <tr>
-    <StatsData><span className="fa fa-star checked"></span> {props.reviews} Reviews </StatsData>
-    {props.verified && <StatsData><i className="fa fa-check-circle checked"></i> Verified </StatsData>}
+    <StatsData className='reviews'><span className="fa fa-star checked"></span>{props.reviews} Reviews</StatsData>
+    {props.verified && <StatsData className='verified'><i className="fa fa-check-circle checked"></i>Verified</StatsData>}
     {props.superhost &&
-      <StatsData><img src='http://localhost:3001/assets/statsHostIcon.png' /> Superhost </StatsData>
+      <StatsData className='superhost-stats-copy'><img className='superhost-stats' src='http://localhost:3001/assets/statsHostIcon.png' />Superhost</StatsData>
       }
-
-    </tr>
-
-
   </Cols>
 )
 
