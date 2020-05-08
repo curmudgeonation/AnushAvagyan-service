@@ -11,16 +11,16 @@ describe('Stats component', function() {
   it('should render all elements correctly without throwing an error', function() {
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find('.reviews').length).toBe(1);
-    expect(wrapper.find('.fa-check-circle').length).toBe(1);
+    expect(wrapper.find('.check').length).toBe(1);
   });
 
   it('should show the correct number of reviews', function() {
-    expect(wrapper.find('.reviews').text()).toEqual(sampleData.reviews + ' Reviews');
+    expect(wrapper.find('.reviews').text()).toEqual(' ' + sampleData.reviews + ' Reviews ');
   });
 
   it('should render Superhost badge if the host is a Superhost', function() {
     expect(wrapper.find('.superhost-stats').length).toBe(1);
-    expect(wrapper.find('.superhost-stats-copy').text()).toEqual('Superhost');
+    expect(wrapper.find('.superhost-stats-copy').text()).toEqual(' Superhost ');
 
   });
 
@@ -32,14 +32,14 @@ describe('Stats component', function() {
     sampleData.superhost = true;
   });
   it('should render verified checkmark if the host has been verified', function() {
-    expect(wrapper.find('.fa-check-circle').length).toBe(1);
-    expect(wrapper.find('.verified').text()).toEqual('Verified');
+    expect(wrapper.find('.check').length).toBe(1);
+    expect(wrapper.find('.verified').text()).toEqual('Verified ');
 
   });
   it('should not render verified checkmark if the host has not been verified', function() {
     sampleData.verified = false;
     wrapper = wrapper = shallow(<Stats superhost={sampleData.superhost} reviews={sampleData.reviews} verified={sampleData.verified}/>);
-    expect(wrapper.find('.fa-check-circle').length).toBe(0);
+    expect(wrapper.find('.check').length).toBe(0);
     sampleData.verified = false;
   });
 

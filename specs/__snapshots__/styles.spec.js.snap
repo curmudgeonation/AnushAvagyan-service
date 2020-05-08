@@ -14,7 +14,7 @@ exports[`Styles - React Styled Components Avatar renders correctly 1`] = `
 
 exports[`Styles - React Styled Components Bold text renders correctly 1`] = `
 <div
-  className="sc-AxheI kCFdDf"
+  className="sc-AxheI iQSWCA"
 >
   During your stay
 </div>
@@ -34,7 +34,7 @@ exports[`Styles - React Styled Components Date joined renders correctly 1`] = `
 
 exports[`Styles - React Styled Components Info block renders correctly 1`] = `
 <div
-  className="sc-AxjAm bNPAPf"
+  className="sc-AxjAm ibykXD"
 />
 `;
 
@@ -52,7 +52,7 @@ exports[`Styles - React Styled Components Note Icon renders correctly 1`] = `
 
 exports[`Styles - React Styled Components Note renders correctly 1`] = `
 <div
-  className="sc-fznKkj Wyeld"
+  className="sc-fznKkj hTLTnj"
 />
 `;
 
@@ -64,13 +64,13 @@ exports[`Styles - React Styled Components Read more button renders correctly 1`]
 
 exports[`Styles - React Styled Components Stats columns renders correctly 1`] = `
 <div
-  className="sc-AxiKw dzlrJk"
+  className="sc-AxiKw dgPOlS"
 />
 `;
 
 exports[`Styles - React Styled Components StatsData renders correctly 1`] = `
 <div
-  className="sc-AxhCb dxwNvq"
+  className="sc-AxhCb dujZPi"
 />
 `;
 
@@ -88,6 +88,6 @@ exports[`Styles - React Styled Components Title joined renders correctly 1`] = `
 
 exports[`Styles - React Styled Components Top component renders correctly 1`] = `
 <div
-  className="sc-AxhUy ieeasb"
+  className="sc-AxhUy kTSBDK"
 />
 `;

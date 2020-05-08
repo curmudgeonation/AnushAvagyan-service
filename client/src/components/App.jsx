@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount(){
 
     $.ajax({
-      url: 'http://127.0.0.1:3001/listings/' + this.props.id+ '/hosts',
+      url: 'http://localhost:3001/listings/' + this.props.id+ '/hosts',
       type: 'GET',
       success: (data) => {
 

@@ -19,6 +19,7 @@ body {
 .flex-container {
   display: flex;
 }
+
 .checked {
   color: rgb(255, 102, 102);
 }
@@ -29,24 +30,29 @@ padding-top: 5px;
 padding-bottom: 5px;
 width: 42%;
 padding-right: 100px;
+* {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 `
 export const NoteIcon = styled.img`
 float: left;
 `
 export const Cols = styled.div`
-padding-bottom: 15px;
 display: flex;
-
 `
 export const StatsData = styled.div`
 padding-right: 30px;
-
+padding-top: 0px;
+padding-bottom: 0px;
+* {
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
 `
-
-
 export const Top = styled.div`
 padding-top: 5px;
-padding-bottom: 10px;
+padding-bottom: 0px;
 display: flex;
 `
 
@@ -68,22 +74,11 @@ background-color: white;
 border-color: rgb(34, 34, 34);
 
 `
-
-
-
-
-// /* Clear floats after the columns */
-// .row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
-
-
 export const Bold = styled.div`
-font-weight: bold;
+font-weight: 600;
 padding-top: 10px;
-padding-bottom: 3px;
+padding-bottom: 4px;
+font-size: 1.11em;
 `
 export const Avatar = styled.div`
 position:relative;
@@ -130,7 +125,7 @@ export const Note = styled.div`
 color: rgb(34, 34, 34);
 font-weight: 400;
 font-size: 13px;
-padding-top: 30px;
+padding-top: 10px;
 padding-bottom: 5px;
 align-items: center;
 width: 50%;

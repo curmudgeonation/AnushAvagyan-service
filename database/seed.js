@@ -26,16 +26,11 @@ const sampleData = [
     reviews: 53,
     verified: true,
     superhost: true,
-    superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
     joined_at: '2017-11-10T05:05:26.037Z',
     languages: 'English, Italiano',
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'New York',
-  provided: {
-    email: true,
-    phone: true
-  },
     avatarUrl: 'https://source.unsplash.com/200x130/?portrait'
   },
   {
@@ -46,18 +41,12 @@ const sampleData = [
     reviews: 1688,
     verified: true,
     superhost: true,
-    superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
     coHost: [3, 4],
     joined_at: '2015-01-14T05:05:26.037Z',
     languages: 'English, Korean, German',
     responseTime: 'within an hour',
     responseRate: 98,
     location: 'Sunnyvale, CA',
-  provided: {
-    email: true,
-    phone: true,
-    id: true
-  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   },
   {
@@ -73,11 +62,6 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 92,
     location: 'San Jose, CA',
-  provided: {
-    email: false,
-    phone: true,
-    id: false
-  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   },
   {
@@ -88,18 +72,12 @@ const sampleData = [
     reviews: 16,
     verified: true,
     superhost: true,
-    superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
     coHost: [2],
     joined_at: '2011-01-14T05:05:26.037Z',
     languages: 'English, Spanish',
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'Honolulu, HI',
-  provided: {
-    email: true,
-    phone: false,
-    id: true
-  },
     avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
   }
 
@@ -118,8 +96,8 @@ const insertSampleData = function() {
       description: lorem.generateSentences(5),
       duringStay: lorem.generateSentences(3),
       reviews: Math.round(Math.random() * 1000),
-      verified: true,
-      superhost: Math.random() >= 0.8,
+      verified: Math.random() >= 0.8,
+      superhost: Math.random() >= 0.7,
       superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
       joined_at: moment(new Date(+(new Date()) - Math.floor(Math.random()*1000000000000)))
       .format(),
@@ -127,11 +105,6 @@ const insertSampleData = function() {
       responseTime: randomResponse[Math.round(Math.random() * 4)],
       responseRate: Math.round(Math.random() * 100),
       location: randomLocation[Math.round(Math.random() * 8)],
-    provided: {
-      email: true,
-      phone: false,
-      id: true
-    },
       avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
     }
     sampleData.push(temp);
