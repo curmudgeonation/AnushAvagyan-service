@@ -31,7 +31,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'New York',
-    avatarUrl: 'https://source.unsplash.com/200x130/?portrait'
+    avatarUrl: 'http://localhost:3001/assets/avatars/1.jpg'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 98,
     location: 'Sunnyvale, CA',
-    avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+    avatarUrl: 'http://localhost:3001/assets/avatars/2.jpg'
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 92,
     location: 'San Jose, CA',
-    avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+    avatarUrl: 'http://localhost:3001/assets/avatars/3.jpg'
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'Honolulu, HI',
-    avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+    avatarUrl: 'http://localhost:3001/assets/avatars/4.jpg'
   }
 
 
@@ -90,6 +90,15 @@ var randomResponse = ['within an hour', 'within a day', 'within a minute', 'with
 const insertSampleData = function() {
 
   for (var i = 5; i < 120; i++) {
+    if (i < 30) {
+      var img = i;
+    } else if (i < 60) {
+      var img = i - 30;
+    } else if (i < 90) {
+      var img = i - 60;
+    } else {
+      var img = i - 90;
+    }
     var temp =  {
       id: i,
       name: lorem.generateWords(2),
@@ -98,14 +107,13 @@ const insertSampleData = function() {
       reviews: Math.round(Math.random() * 1000),
       verified: Math.random() >= 0.8,
       superhost: Math.random() >= 0.7,
-      superhostIcon: 'https://www.pinpng.com/pngs/m/13-133921_responsive-website-by-pelican-design-consultants-airbnb-superhost.png',
       joined_at: moment(new Date(+(new Date()) - Math.floor(Math.random()*1000000000000)))
       .format(),
       languages: randomLanguage[Math.round(Math.random() * 6)],
       responseTime: randomResponse[Math.round(Math.random() * 4)],
       responseRate: Math.round(Math.random() * 100),
       location: randomLocation[Math.round(Math.random() * 8)],
-      avatarUrl: 'https://source.unsplash.com/1600x900/?portrait'
+      avatarUrl: `http://localhost:3001/assets/avatars/${img}.jpg`
     }
     sampleData.push(temp);
   }

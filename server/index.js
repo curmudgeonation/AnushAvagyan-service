@@ -69,11 +69,22 @@ app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   .catch(err =>{
     console.error('Failed', err);
   });
+  // Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
+  //   if (err) {
+  //     return console.error(err);
+  //   }
+  //   res.status(200).json(data[0]);
+  //   next();
+  // })
 
 });
 
 app.get('/assets/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/assets/' + req.params.id));
+});
+
+app.get('/assets/avatars/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/assets/avatars/' + req.params.id));
 });
 
 

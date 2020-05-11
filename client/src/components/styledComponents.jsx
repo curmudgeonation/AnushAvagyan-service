@@ -10,7 +10,12 @@ body {
   font-family: 'Montserrat';
   font-size: 1.1em;
 }
-
+#host {
+  margin-left: 150px;
+  margin-right: 50px;
+  width: auto;
+  padding-left: 24px;
+}
 @media screen and (max-width: 600px) {
   .info {
     width: 100%;
@@ -88,15 +93,15 @@ padding-bottom: 10px;
 `
 export const Image = styled.img`
 position: relative;
-width: 90px;
-height: 90px;
+width: 100px;
+height: 100px;
 border-radius: 50%;
 `
 export const Icon = styled.img`
 position: absolute;
 width: 30px;
-top: 75px;
-left: 65px;
+top: 80px;
+left: 75px;
 `
 export const Title = styled.div`
 margin-top: 30px;

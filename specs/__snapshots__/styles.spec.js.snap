@@ -2,7 +2,7 @@
 
 exports[`Styles - React Styled Components Avatar image renders correctly 1`] = `
 <img
-  className="sc-AxmLO dvIATu"
+  className="sc-AxmLO enZMVm"
 />
 `;
 
@@ -76,7 +76,7 @@ exports[`Styles - React Styled Components StatsData renders correctly 1`] = `
 
 exports[`Styles - React Styled Components Superhost icon on avatar renders correctly 1`] = `
 <img
-  className="sc-fzozJi gGhnYI"
+  className="sc-fzozJi dRCMDn"
 />
 `;
 

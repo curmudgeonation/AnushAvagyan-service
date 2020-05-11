@@ -17,31 +17,38 @@ class App extends React.Component {
     }
 
     this.changeToHostView = this.changeToHostView.bind(this);
+    this.renderShortDesc = this.renderShortDesc.bind(this);
+    this.fetchData = this.fetchData.bind(this);
 
   }
   componentDidMount(){
+    this.fetchData(this.props.id);
+  }
 
+  fetchData(id) {
     $.ajax({
-      url: 'http://localhost:3001/listings/' + this.props.id+ '/hosts',
+      url: 'http://localhost:3001/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
-
-        if (data.description && data.description.length > 180) {
-          data.descShort = data.description.substr(0, 180);
-        }
-        if (data.duringStay && data.duringStay.length > 180) {
-          data.duringStayLess = data.duringStay.substr(0, 180);
-        }
-
-        this.setState({
-          host: data
-        });
-
+        this.renderShortDesc(data);
       },
       error: function(err) {
         console.log("Failed to get the data from the server ", err);
       }
     })
+  }
+
+  renderShortDesc(data) {
+    if (data.description && data.description.length > 180) {
+      data.descShort = data.description.substr(0, 180);
+    }
+    if (data.duringStay && data.duringStay.length > 180) {
+      data.duringStayLess = data.duringStay.substr(0, 180);
+    }
+    this.setState({
+      host: data
+    });
+
   }
 
   changeToHostView(host) {
