@@ -31,7 +31,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'New York',
-    avatarUrl: 'http://localhost:3001/assets/avatars/1.jpg'
+    avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/1.jpg'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 98,
     location: 'Sunnyvale, CA',
-    avatarUrl: 'http://localhost:3001/assets/avatars/2.jpg'
+    avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/2.jpg'
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 92,
     location: 'San Jose, CA',
-    avatarUrl: 'http://localhost:3001/assets/avatars/3.jpg'
+    avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/3.jpg'
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'Honolulu, HI',
-    avatarUrl: 'http://localhost:3001/assets/avatars/4.jpg'
+    avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/4.jpg'
   }
 
 
@@ -113,7 +113,7 @@ const insertSampleData = function() {
       responseTime: randomResponse[Math.round(Math.random() * 4)],
       responseRate: Math.round(Math.random() * 100),
       location: randomLocation[Math.round(Math.random() * 8)],
-      avatarUrl: `http://localhost:3001/assets/avatars/${img}.jpg`
+      avatarUrl: `https://host-service.s3-us-west-1.amazonaws.com/${img}.jpg`
     }
     sampleData.push(temp);
   }

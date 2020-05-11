@@ -83,9 +83,6 @@ app.get('/assets/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/assets/' + req.params.id));
 });
 
-app.get('/assets/avatars/:id', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../public/assets/avatars/' + req.params.id));
-});
 
 
 
