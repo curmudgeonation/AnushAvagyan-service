@@ -16,7 +16,7 @@ const Host = (props) => (
   <div>
      <Profile url={props.host.avatarUrl} name={props.host.name} date={props.host.joined_at} superhost={props.host.superhost}/>
 
-
+    <div className='flex-container'>
     <Info>
       <Stats superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
 
@@ -44,8 +44,11 @@ const Host = (props) => (
     <div className='resp-rate'>Response rate: {props.host.responseRate}%</div>
     <div className='resp-time'>Response time: {props.host.responseTime}</div>
     <ContactHost className='contact-button'>Contact host</ContactHost>
-    <Note><NoteIcon className='payment-wrg-icon' src='../././paymentNote.png' /> <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p> </Note>
+    <Note><NoteIcon className='payment-wrg-icon' src='http://localhost:3001/assets/paymentNote.png' /> <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p> </Note>
   </Info>
+
+    </div>
+
 
 
   </div>
