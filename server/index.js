@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
+const axios = require('axios');
 
 const Hosts = require('../database/Host.js');
 const sampleData = require('../database/sampleData.js');
@@ -54,15 +55,28 @@ app.get('/:id', (req, res) => {
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   // call listing service API to get host id associated with the listing id in the url
   // query the db or call my own api to get host data with host id
-  console.log("ID is ", req.params.id);
-  Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
-    if (err) {
-      return console.error(err);
-    }
-    res.status(200).json(data[0]);
-    next();
+
+  axios.get(`http://localhost:3005/listings/${req.params.id}`)
+  .then(data => {
+    Hosts.find({id: data.data.hostId}).exec((err, data) => {
+      if (err) {
+        return console.error(err);
+      }
+      res.status(200).json(data[0]);
+      next();
+    })
   })
-  //res.status(200).json(sampleData);
+  .catch(err =>{
+    console.error('Failed', err);
+  });
+  // Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
+  //   if (err) {
+  //     return console.error(err);
+  //   }
+  //   res.status(200).json(data[0]);
+  //   next();
+  // })
+
 });
 
 app.get('/assets/:id', (req, res) => {
@@ -70,6 +84,7 @@ app.get('/assets/:id', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+
+
+
+module.exports = app;

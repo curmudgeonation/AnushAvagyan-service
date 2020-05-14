@@ -10,7 +10,12 @@ body {
   font-family: 'Montserrat';
   font-size: 1.1em;
 }
-
+#host {
+  margin-left: 150px;
+  margin-right: 50px;
+  width: auto;
+  padding-left: 24px;
+}
 @media screen and (max-width: 600px) {
   .info {
     width: 100%;
@@ -19,6 +24,7 @@ body {
 .flex-container {
   display: flex;
 }
+
 .checked {
   color: rgb(255, 102, 102);
 }
@@ -29,24 +35,29 @@ padding-top: 5px;
 padding-bottom: 5px;
 width: 42%;
 padding-right: 100px;
+* {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 `
 export const NoteIcon = styled.img`
 float: left;
 `
-export const Cols = styled.table`
-padding-bottom: 15px;
-
+export const Cols = styled.div`
+display: flex;
 `
-export const StatsData = styled.td`
-text-align: left;
+export const StatsData = styled.div`
 padding-right: 30px;
-
+padding-top: 0px;
+padding-bottom: 0px;
+* {
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
 `
-
-
 export const Top = styled.div`
 padding-top: 5px;
-padding-bottom: 10px;
+padding-bottom: 0px;
 display: flex;
 `
 
@@ -68,22 +79,11 @@ background-color: white;
 border-color: rgb(34, 34, 34);
 
 `
-
-
-
-
-// /* Clear floats after the columns */
-// .row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
-
-
 export const Bold = styled.div`
-font-weight: bold;
+font-weight: 600;
 padding-top: 10px;
-padding-bottom: 3px;
+padding-bottom: 4px;
+font-size: 1.11em;
 `
 export const Avatar = styled.div`
 position:relative;
@@ -93,15 +93,15 @@ padding-bottom: 10px;
 `
 export const Image = styled.img`
 position: relative;
-width: 90px;
-height: 90px;
+width: 100px;
+height: 100px;
 border-radius: 50%;
 `
 export const Icon = styled.img`
 position: absolute;
 width: 30px;
-top: 75px;
-left: 65px;
+top: 80px;
+left: 75px;
 `
 export const Title = styled.div`
 margin-top: 30px;
@@ -130,7 +130,7 @@ export const Note = styled.div`
 color: rgb(34, 34, 34);
 font-weight: 400;
 font-size: 13px;
-padding-top: 30px;
+padding-top: 10px;
 padding-bottom: 5px;
 align-items: center;
 width: 50%;
